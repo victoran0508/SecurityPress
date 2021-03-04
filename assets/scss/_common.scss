@@ -1,0 +1,1187 @@
+@charset "utf-8";
+
+/* 共通のスタイル */
+
+.page-wrapper {
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.background-cover {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.text-left {
+	text-align: left !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+.btn {
+	display: inline-block;
+	width: 300px;
+	max-width: 100%;
+	line-height: 55px;
+	background-color: #052265;
+	color: #fff;
+	position: relative;
+	@include transition-all;
+
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 0px;
+		height: 0px;
+		border-left: 6px solid $color-white;
+		border-top: 6px solid transparent;
+		border-bottom: 6px solid transparent;
+		// transform: rotate(135deg);
+		position: absolute;
+		right: 16px;
+		top: 50%;
+		margin-top: -6px;
+	}
+
+	&:hover {
+		background: $color-red;
+	}
+
+	> span {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.white-background {
+	background: $color-background1;
+}
+
+.gray-background {
+	background: $color-background2;
+}
+
+section {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.hero {
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.top-menu {
+	padding-top: 80px;
+
+	a:hover {
+		text-decoration: underline !important;
+		color : $color-red !important;
+	}
+}
+
+@media (max-width: 1280px) {
+	section:not(.hero):not(.our-business) {
+	    padding-left: 30px;
+	    padding-right: 30px;
+	}
+}
+
+.section-title {
+	text-align: center;
+	margin-bottom: 60px;
+
+	h3 {
+		font-size: 14px;
+		font-family: "Noto Sans JP Bold";
+		font-weight: normal;
+		color: $color-red;
+
+		> span {
+			font-family: "Noto Sans JP Bold";
+			font-size: 32px;
+			font-weight: normal;
+			line-height: 60px;
+		    color: $color-black;
+			display: block;
+			word-break: keep-all;
+		}
+
+		background: bottom url(../img/two-color-border.png) no-repeat;
+	}
+
+	p {
+		font-size: 18px;
+		font-weight: 500;
+		letter-spacing: .1em;
+		margin-top: 10px;
+	}
+}
+
+.hero-item {
+	width: 1400px;
+	height: 520px;
+	position: relative;
+	@extend .background-cover;
+}
+
+.hero-title {
+	background: linear-gradient(90deg, rgba(4,66,109,.7) 0%, rgba(0,0,0,0) 100%);
+	height: 100%;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 100px;
+	text-align: left;
+	@media(max-width: 640px) {
+		text-align: center;
+	}
+
+	&.secondary {    	
+		justify-content: flex-start;
+		@media(max-width: 640px) {
+			justify-content: center;
+		}
+	}
+
+	h2 {
+		font-family: "Noto Sans JP Black";
+		font-size: 41px;
+		font-weight: normal;
+		letter-spacing: -0.3px;
+		line-height: 1.63;
+		text-shadow: 0 3px 6px #000000;
+
+		@media(max-width: 640px) {
+			font-size: 30px;
+		}
+		@media(max-width: 450px) {
+			font-size: 20px;
+		}
+	}
+}
+
+.investigation-result {
+	padding-top: 80px;
+	padding-bottom: 80px;
+
+	.results {
+		margin: 0 -15px;
+		display: flex;
+		margin-bottom: 20px;
+		flex-wrap: wrap;
+		counter-reset: LIST-ITEMS 0;
+		@media(max-width: 640px) {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.item {
+			padding: 0 15px;
+			@media(max-width: 640px) {
+				width: 400px;
+				padding-left: unset;
+				padding-right: unset;
+
+				+.item {
+					padding-top: 50px;
+				}
+			}
+			@media(max-width: 500px) {
+				width: 100%;
+				padding-left: unset;
+				padding-right: unset;
+
+				+.item {
+					padding-top: 30px;
+				}
+			}
+
+			.item-inner {
+				background: $color-background1;
+				border: 5px solid#E4E6E8;
+				box-shadow: 0 3px 6px rgba(101, 101, 101, 0.16);
+
+				&:before {
+					height: 60px;
+					width: 60px;
+					content: counter( LIST-ITEMS );
+					counter-increment: LIST-ITEMS;
+					display: flex;
+					background: $color-background3;
+					color: $color-white;
+					position: relative;
+					left: -12px;
+					top: -12px;
+					text-align: center;
+					align-items: center;
+					justify-content: center;
+					font: 27px "Noto Sans JP Bold";
+					float: left;
+				}
+
+				.result-title {
+					padding-top: 60px;
+					text-align: center;
+
+					span {
+						font-family: "Noto Sans JP Bold";
+						font-size: 20px;
+						display: block;
+						height: 60px;
+					}
+					padding-bottom: 14px;
+				}
+
+				.result-image {
+					width: 80px;
+					height: 145px;
+					overflow: visible;
+					margin: 0 auto;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-top: 2px solid #DEDEDE;
+
+					img.first {
+						height: 99px;
+						width: 75px;
+					}
+
+					img.second {
+						max-height: 87px;
+						max-width: 87px;
+					}
+
+					img.third {
+						max-height: 89px;
+						max-width: 101px;
+					}
+				}
+
+				.result-message {
+					text-align: center;
+					display: flex;
+					align-items: baseline;
+					justify-content: center;
+					@media(max-width: 960px) {
+						flex-direction: column;
+						align-items: center;
+					}
+
+					.count {
+						color: $color-red;
+						font-family: "Noto Sans JP Black";
+						font-size: 40px;
+						@media(max-width: 768px) {
+							font-size: 30px;
+						}
+					}
+
+					.unit {
+						color: $color-black;
+						font-family: "Noto Sans JP Bold";
+						font-size: 20px;
+						white-space: nowrap;
+					}
+
+					padding-bottom: 45px;
+				}
+			}
+		}
+
+		&.columns3 {
+			@media(min-width: 640px) {
+				.item {
+					flex: 0 0 33.33%;
+					max-width: 33.33%;
+				}
+			}
+		}
+	}
+
+	.reference {
+		text-align: center;
+
+		span {
+			font-family: "Noto Sans JP Regular";
+			font-size: 12px;
+			color: $color-gray;
+		}
+	}
+}
+
+.information-leak {
+	padding-top: 80px;
+	padding-bottom: 80px;
+
+	.examples {
+		margin: 0 -15px;
+		display: flex;
+		margin-bottom: 20px;
+		flex-wrap: wrap;
+		@media(max-width: 640px) {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.item {
+			padding: 0 15px;
+			@media(max-width: 640px) {
+				width: 400px;
+				padding-left: unset;
+				padding-right: unset;
+
+				+.item {
+					padding-top: 30px;
+				}
+			}
+			@media(max-width: 500px) {
+				width: 100%;
+				padding-left: unset;
+				padding-right: unset;
+			}
+
+			.item-inner {
+				background: $color-background1;
+
+				.website-logo {
+					height: 240px;
+					border: 1px solid $color-gray-2;
+					background: center url(../img/example1.png) no-repeat;
+					@include transition-all;
+
+					&.website-logo--imagineer {
+						background: center url(../img/example1.png) no-repeat;
+					}
+	
+					&.website-logo--famm {
+						background: center url(../img/example2.png) no-repeat;
+					}
+	
+					&.website-logo--memphis-store {
+						background: center url(../img/example3.png) no-repeat;
+					}
+
+					.hover-mask {
+						background: $color-mask;
+						opacity: 0;
+						visibility: unset;
+						height: 100%;
+						width: 100%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						cursor: pointer;
+
+						.mask-content {
+							.circle {
+								max-width: 70px;
+								min-width: 70px;
+								min-height: 70px;
+								max-height: 70px;
+								border: 2px solid white;
+								border-radius: 50%;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+
+								.right-arrow {
+									height: 20px;
+									width: 20px;
+									border-top: 2px solid white;
+									border-right: 2px solid white;
+									transform: rotate(45deg);
+									position: relative;
+									left: -4px;
+								}
+							}
+
+							.text {
+								span {
+									font: 16px "Noto Sans JP Medium";
+									color: white;
+								}
+							}
+						}
+					}
+
+					&:hover {
+						.hover-mask {
+							opacity: 0.9;
+							visibility: visible;
+						}
+					}
+				}
+
+				.button-panel {
+					padding-top: 24px;
+					display: flex;
+
+					.button {
+						width: 130px;
+						height: 25px;
+						text-align: center;
+						@include flex-center;
+
+						span {
+							color: $color-white;
+							font: 12px "Noto Sans JP Medium";
+						}
+
+						&.button--invalid-access {
+							background: #68727C;
+						}
+						
+						&.button--link-to {
+							background: #E04242;
+						}
+
+						+.button {
+							margin-left: 8px;
+						}
+					}
+				}
+
+				.datetime {
+					span {
+						font: 13px "Noto Sans JP Regular";
+						color: $color-gray;
+					}
+				}
+
+				.explanation {
+					a {
+						font: 16px "Noto Sans JP Medium";
+						color: $color-black;
+
+						&:hover {
+							text-decoration: underline !important;
+						}
+					}
+				}
+			}
+		}
+
+		&.columns3 {
+			@media(min-width: 640px) {
+				.item {
+					flex: 0 0 33.33%;
+					max-width: 33.33%;
+				}
+			}
+		}
+	}
+
+	.btn-container {
+		text-align: center;
+
+		.btn {
+			font-family: "Noto Sans JP Medium";
+			font-size: 16px;
+			color: $color-white;
+			background: $color-background3;
+
+			&:hover {
+				background: $color-red;
+			}
+		}
+	}
+}
+
+.vulnerability {
+	padding-top: 80px;
+	padding-bottom: 380px;
+	@media(max-width: 1024px) {
+		padding-bottom: 80px;
+	}
+
+	.link {
+		font: 15px "Noto Sans JP Bold";
+		text-align: center;
+
+		a {
+			text-decoration: underline !important;
+
+			&:hover {
+				text-decoration: none !important;
+			}
+		}
+	}
+
+	.explanation {
+		font: 14px "Noto Sans JP Medium";
+		text-align: center;
+		padding-bottom: 60px;
+		margin-top: 14px;
+	}
+
+	.vulnerabilities {
+		margin: 0 -15px;
+		display: flex;
+		margin-bottom: 50px;
+		flex-wrap: wrap;
+		@media(max-width: 1000px) {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.column {
+			padding: 0 15px;
+			max-width: 600px;
+			@media(max-width: 1000px) {
+				+.column {
+					padding-top: 30px;
+				}
+			}
+
+			.white-background {
+				padding-bottom: 22px;
+			}
+
+			.subtitle {
+				padding: 40px 60px;
+
+				.text {
+					text-align: center;
+					border: 1px solid $color-background3;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding-top: 8px;
+					padding-bottom: 8px;
+
+					span {
+						font: 17px "Noto Sans JP Bold";
+						color: $color-background3;
+					}
+				}
+			}
+
+			.item {
+				padding-left: 60px;
+				padding-right: 60px;
+				@media(max-width: 1000px) {
+					padding-left: 30px;
+					padding-right: 30px;
+				}
+				@media(max-width: 400px) {
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+
+				.item-inner {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+
+					.risk-level {
+						min-height: 90px;
+						min-width: 90px;
+						max-height: 90px;
+						max-width: 90px;
+						border-radius: 50%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin-right: 25px;
+						@media(max-width: 400px) {
+							margin-right: 10px;
+						}
+
+						&.risk-level--1 {
+							background: $color-risk-1;
+						}
+
+						&.risk-level--2 {
+							background: $color-risk-2;
+						}
+
+						&.risk-level--3 {
+							background: $color-risk-3;
+						}
+
+						&.risk-level--4 {
+							background: $color-risk-4;
+						}
+
+						.risk-level__title {
+							text-align: center;
+
+							.label {
+								color: $color-white;
+								font: 12px "Noto Sans JP Bold";
+							}
+
+							.value {
+								color: $color-white;
+								font: 22px "Noto Sans JP Bold";
+							}
+						}
+					}
+
+					.details {
+						.datetime {
+							font: 13px "Noto Sans JP Regular";
+							color: $color-gray;
+						}
+
+						.badges {
+							margin-top: 11px;
+
+							.badge {
+								color: $color-white;
+								font: 12px "Noto Sans JP Medium";
+								padding: 3px 20px;
+								word-break: keep-all;
+
+								&.badge--low-version {
+									background: $color-badge-1;
+								}
+
+								&.badge--need-version-up {
+									background: $color-badge-2;
+								}
+							}
+
+							+.badge {
+								padding-left: 8px;
+							}
+						}
+
+						.explain {
+							margin-top: 11px;
+							text-align: left;
+							font: 16px "Noto Sans JP Medium";
+							color: $color-black;
+							
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
+
+					padding-bottom: 28px;
+				}
+
+				+.item {
+					// padding-top: 28px;
+
+					.item-inner {
+						padding-top: 28px;
+						border-top: 1px solid $color-gray-2;
+					}
+				}
+			}
+		}
+
+		&.columns2 {
+			@media(min-width: 1000px) {
+				.column {
+					flex: 0 0 50%;
+					max-width: 50%;
+				}
+			}
+		}
+	}
+
+	.btn-container {
+		text-align: center;
+
+		.btn {
+			font-family: "Noto Sans JP Medium";
+			font-size: 16px;
+			color: $color-white;
+			background: $color-background3;
+
+			&:hover {
+				background: $color-red;
+			}
+		}
+	}
+}
+
+.diagnose-form {
+	position: relative;
+	display: flex;
+	justify-content: center;
+
+	.section-container {
+		max-width: 1000px;
+		width: 100%;
+		padding: 80px 100px 60px;
+		@media(max-width: 1024px) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		@media(min-width: 1024px) {
+			border: 5px solid $color-border-1;
+			box-shadow: 0 3px 6px rgba(101, 101, 101, 0.16);
+			position: absolute;
+			top: -300px;
+			margin: 0 auto;
+		}
+
+		.form {
+			.input-url {
+				display: flex;
+				justify-content: center;
+	
+				input[type=text] {
+					width: 100%;
+					max-width: 500px;
+					padding: 20px 25px;
+					border: 3px solid $color-border-2;
+					border-radius: 3px;
+
+					&:focus {
+						border-color: $color-black;
+					}
+				}
+			}
+	
+			.input-check {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding-top: 30px;
+				padding-bottom: 30px;
+	
+				input[type=checkbox] {
+					height: 15px;
+					width: 15px;
+					margin-right: 15px;
+				}
+	
+				label {
+					font: 13px "Noto Sans JP Medium";
+					color: $color-gray-3;
+				}
+			}
+	
+			.input-submit {
+				.btn-container {
+					display: flex;
+					justify-content: center;
+					text-align: center;
+					padding-top: 15px;
+					padding-bottom: 15px;
+					@media(max-width: 832px) {
+						flex-direction: column;
+						align-items: center;
+					}
+	
+					.btn {
+						font-family: "Noto Sans JP Medium";
+						font-size: 13px;
+						color: $color-white;
+						background: $color-background3;
+						
+						&:hover {
+							background: $color-red;
+						}
+	
+						&.submit {
+							font-size: 16px;
+							background: $color-red;
+
+							&:hover {
+								background: $color-background3;
+							}	
+						}
+	
+						+.btn {
+							@media(min-width: 833px) {
+								margin-left: 20px;
+							}
+							@media(max-width: 832px) {
+								margin-top: 30px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.staff-blog {
+	padding-top: 370px;
+	@media(max-width: 1024px) {
+		padding-top: 70px;
+		background: $color-background2;
+	}
+	padding-bottom: 80px;
+
+	.container {
+		display: flex;
+		justify-content: center;
+
+		.blogs {
+			width: 100%;
+			max-width: 850px;
+
+			.item {
+				height: 70px;
+				padding-left: 20px;
+				padding-right: 20px;
+				border-top: 1px solid $color-gray-2;
+				display: flex;
+				align-items: center;
+
+				.item-inner {
+					display: flex;
+					@media(max-width: 800px) {
+						flex-direction: column;
+					}
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					
+					.datetime {
+						font: 14px "Noto Sans JP Regular";
+						color: $color-gray;
+						margin-right: 30px;
+					}
+
+					.blog-title {
+						font: 16px "Noto Sans JP Medium";
+						color: $color-black;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+
+				&:last-child {
+					border-bottom: 1px solid $color-gray-2;
+				}
+			}
+		}
+	}
+
+	.btn-container {
+		text-align: center;
+		padding-top: 60px;
+
+		.btn {
+			font-family: "Noto Sans JP Medium";
+			font-size: 16px;
+			color: $color-white;
+			background: $color-background3;
+
+			&:hover {
+				background: $color-red;
+			}
+		}
+	}
+}
+
+.simple-diagnose {
+    position: relative;
+	padding-top: 20px;
+	@media(max-width: 1024px) {
+		padding-top: 80px;
+	}
+	
+	.container {
+		max-width: 1000px;
+		height: 230px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+
+		a {
+			width: 100%;
+			background-image: url(../img/simple-diagnose.png);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.content {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-80%, -50%);
+			@media(max-width: 800px) {
+				transform: translate(-50%, -50%);
+			}
+			color: #fff;
+			text-align: center;
+			pointer-events: none;
+
+			h2 {
+				font: 25px "Noto Sans JP Bold";
+				padding-bottom: 18px;
+				position: relative;
+				// word-break: keep-all;
+				white-space: nowrap;
+			}
+
+			p {
+				font: 14px "Noto Sans JP Medium";
+				white-space: nowrap;
+			}
+
+			.commission {
+				padding-top: 18px;
+				display: flex;
+				justify-content: center;
+
+				.label {
+					padding: 4px 20px;
+					border: 1px solid white;
+					margin-right: 15px;
+
+					span {
+						font: 12px "Noto Sans JP Medium";
+					}
+				}
+
+				.price {
+					display: flex;
+					align-items: baseline;
+
+					.value {
+						font: 27px "Noto Sans JP Black";
+					}
+
+					.unit {
+						font: 15px "Noto Sans JP Black";
+					}
+				}
+			}
+		}
+
+		.link-detail {
+			position: absolute;
+			text-align: center;
+			background: $color-red;
+			transform: rotate(-45deg);
+			right: -73px;
+			bottom: -22px;
+			width: 200px;
+			height: 100px;
+			padding-top: 10px;
+			line-height: 0.1;
+
+			span {
+				color: white;
+				font: 13px "Noto Sans JP Bold";
+			}
+
+			@media(max-width: 560px) {
+				display: none;
+			}
+		}
+
+		> a {
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background-color: $color-mask;
+				opacity: 0;
+				visibility: hidden;
+				@include transition-all;
+				z-index: 2;
+			}
+
+			&:hover:after {
+				opacity: .6;
+				visibility: visible;
+			}
+		}
+	}
+}
+
+.advertisement {
+    position: relative;
+	padding-top: 20px;
+	
+	.container {
+		max-width: 800px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+		margin-top: 20px;
+
+		> a {
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background-color: $color-mask;
+				opacity: 0;
+				visibility: hidden;
+				@include transition-all;
+				z-index: 2;
+			}
+
+			&:hover:after {
+				opacity: .6;
+				visibility: visible;
+			}
+		}
+	}
+}
+
+.page-top-btn {
+	position: fixed;
+	z-index: 100;
+	right: 25px;
+	bottom: 25px;
+	width: 50px;
+	height: 50px;
+	background: $color-gray;
+	border: 2px solid white;
+	border-radius: 2px;
+	display: none;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.16);
+	opacity: 0.8;
+
+	&:hover {
+		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+	}
+
+	&:after {
+		content: "";
+		display: inline-block;
+		width: 0px;
+		height: 0px;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-bottom: 8px solid #FFFFFF;
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		margin-top: -6px;
+	}
+
+	&.visible {
+		display: block;
+	}
+}
+
+@media (max-width: 1024px) {
+	.hero-title {
+		font-size: 16px;
+		height: 270px;
+		padding: 0 120px;
+
+		&:not(.third) {
+			background: none;
+		    bottom: auto;
+		    top: 160px;
+		}
+
+	    &.secondary {
+	    	background: none;
+	    }
+
+		h2 {
+		    line-height: 1.7;
+		    margin-bottom: 10px;
+		}
+
+		p {
+			line-height: 1.7;
+		}
+	}
+
+	.section-title {
+		h3 {
+			font-size: 33px;
+			line-height: 1.5;
+		}
+
+		p {
+		    // font-size: 26px;
+		    line-height: 1.5;
+		    max-width: 500px;
+		    margin: 0 auto;
+		    margin-top: 10px;
+		}
+	}
+
+	.btn {
+	    font-size: 24px;
+	    width: 400px;
+	    line-height: 84px;
+	}
+}
+
+@media (max-width: 749px) {
+	.hero-title {
+	    font-size: 2.5vw;
+	    padding: 0 5vw;
+	}
+
+	.section-title {
+		h3 {
+			font-size: 26px;
+			background: none;
+
+		    > span {
+			    // font-size: 55px;
+			    line-height: 1;
+			}
+		}
+
+		p {
+		    font-size: 20px;
+		}
+	}
+
+	.btn {
+	    font-size: 16px;
+	    line-height: 55px;
+	}
+
+	.speciality-prod .section-content {
+	    padding: 0;
+	}
+
+	section.about-us:not(.hero):not(.our-business) {
+	    padding-left: 30px;
+	    padding-right: 30px;
+	}
+}
+
+@media (max-width: 575px) {
+	.products.columns3 .item {
+	    flex: 0 0 100%;
+	    max-width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.technology .desc {
+	    padding-left: 0;
+	    padding-right: 0;
+	}
+}

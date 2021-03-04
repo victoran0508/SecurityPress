@@ -1,0 +1,276 @@
+@charset "utf-8";
+
+/* トップページのスタイル*/
+
+.page-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9;
+    height: 80px;
+	color: $color-black;
+	background: $color-background1;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.16);
+	border-top: 6px solid $color-red;
+	@include flex-center;
+	@include transition-all;
+	
+	.header-inner {
+		@include flex-center-v;
+		justify-content: space-between;
+		@media (max-width: 768px) {
+			justify-content: center;
+		}
+		width: 1200px;
+		flex-wrap: wrap;
+
+		.logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+			@media (max-width: 1280px) {
+				padding-left: 50px;	
+			}
+			@media (max-width: 480px) {
+				padding-left: 30px;	
+			}
+
+			img {
+				height: 32px;
+				width: 32px;
+				@media (max-width: 480px) {
+					height: 40px;
+					width: 40px;
+				}
+			}
+		
+			.logo-text {
+				align-items: baseline;
+				margin-left: 14px;
+				font-weight: bold;
+			}
+		
+			.logo-text__en, .logo-text__jp {
+				font-family: "Noto Sans CJK JP";
+				white-space: nowrap;
+			}
+		
+			.logo-text__en {
+				font-size: 27px;
+			}
+		
+			.logo-text__jp {
+				font-size: 20px;
+			}
+		}
+	
+		.description {
+			font-family: "Noto Sans JP Regular";
+			font-size: 14px;
+			@media (max-width: 1280px) {
+				padding-left: 60px;
+				padding-right: 50px;
+			}
+			@media (max-width: 768px) {
+				display: none;
+			}
+		}
+	}
+}
+
+.page-footer {
+	.container {
+		@media (max-width: 1280px) {
+	    	padding: 0 30px;
+	    }
+	}
+
+	.footer-top {
+		background: url(../img/footer_bg.jpg) center no-repeat;
+		background-size: cover;
+		color: #fff;
+		padding-top: 100px;
+
+		h2 {
+			font-size: 30px;
+			margin-bottom: 65px;
+			line-height: 1.7;
+		}
+
+		.contact-info {
+		    width: 555px;
+		    max-width: 100%;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    height: 98px;
+		    border: 1px solid #fff;
+		    background-color: #03143c;
+		    margin-bottom: 50px;
+		    font-size: 22px;
+		    line-height: 1;
+		    color: inherit;
+
+		    i {
+		    	margin-right: 30px;
+		    }
+
+		    .phone-number {
+		    	font-size: 28px;
+		    	display: block;
+		    	padding-right: 100px;
+
+		    	~ span {
+		    		font-size: 14px;
+		    	}
+		    }
+		}
+	}
+
+	.footer-middle {
+	    // margin-top: 85px;
+	    background-color: $color-background3;
+		padding: 55px 0;
+		color: $color-gray-4;
+		
+		.logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+			color: $color-gray-4;
+		
+			img {
+				height: 32px;
+				width: 32px;
+				color: $color-gray-4;
+			}
+		
+			.logo-text {
+				align-items: baseline;
+				margin-left: 14px;
+				font-weight: bold;
+			}
+		
+			.logo-text__en, .logo-text__jp {
+				font-family: "Noto Sans CJK JP";
+			}
+		
+			.logo-text__en {
+				font-size: 27px;
+			}
+		
+			.logo-text__jp {
+				font-size: 20px;
+			}
+		}
+	}
+
+	.footer-bottom {
+		padding: 20px 0 24px;
+
+		p {
+			line-height: 2;
+
+			&.copyright {
+				text-align: center;
+				font: 12px "Noto Sans JP Medium";
+				background: transparent;
+				color: $color-background3;
+			}
+		}
+	}
+}
+
+.footer-links {
+	list-style: none;
+    display: flex;
+	justify-content: space-evenly;
+	padding-top: 50px;
+
+	> li {
+		max-width: 105px;
+    	white-space: nowrap;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+	    position: relative;
+	    z-index: 2;
+	    margin-top: 20px;
+	}
+
+	a {
+		font: 14px "Noto Sans JP Medium";
+	    line-height: 32px;
+	    color: inherit;
+	}
+}
+
+@media (max-width: 1024px) {
+	.page-footer {
+	    text-align: center;
+
+	    .container {
+		    padding: 0 97px;
+		}
+
+		.footer-top {
+			padding-top: unset;
+
+			.contact-info {
+			    margin-left: auto;
+			    margin-right: auto;
+			    text-align: left;
+			}
+		}
+
+		.footer-middle {
+		    display: none;
+		}
+
+		.footer-bottom {
+			text-align: left;
+			padding: 50px 0 50px;
+
+			p {
+			    font-size: 24px;
+			    line-height: 1.5;
+
+			    &:not(:last-child) {
+			    	margin: 20px 0;
+			    }
+
+			    span {
+			    	display: block;
+			    }
+
+			    &.copyright {
+				    font-size: 20px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 749px) {
+	.page-footer {
+		.container {
+	    	padding: 0 30px;
+	    }
+
+	    .footer-top .contact-info .phone-number {
+		    padding: 0;
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.page-footer .footer-top .contact-info {
+	    padding: 15px;
+	    height: auto;
+	}
+}

@@ -1,0 +1,603 @@
+<!-- HTMLコード -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/theme.css">
+
+    <!-- javascript -->
+    <script src="./libs/jquery/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <img src="./assets/img/compass.svg" alt="" />
+                <span class="logo-text">
+                    <span class="logo-text__en">Security Press</span>
+                    <span class="logo-text__jp">- セキュリティ プレス -</span>
+                </span>
+            </a>
+            <div class="description">
+                <span>
+                    中小企業の経営者総務担当者様向け／サンエイ社員がお届けするセキュリティ情報サイト
+                </span>
+            </div>
+        </div>
+        <a href="javascript:void(0)" class="nav-open"><span></span></a>
+        <div class="nav-wrapper">
+            <ul class="nav">
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">サイバー攻撃 被害事例</a></li>
+                <li><a href="#">WordPressの脆弱性</a></li>
+                <li><a href="#">スタッフブログ</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="page-wrapper">
+        <section class="top-menu">
+            <div class="nav-wrapper">
+                <ul class="nav">
+                    <li><a href="#">ホーム</a></li>
+                    <li><a href="#">サイバー攻撃 被害事例</a></li>
+                    <li><a href="#">WordPressの脆弱性</a></li>
+                    <li><a href="#">スタッフブログ</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="hero">
+            <div class="hero-item" style="background-image: url(./assets/img/hero01.png);">
+                <div class="hero-title secondary">
+                    <div class="hero-title-wrapper">
+                        <h2>
+                            自社サイトのセキュリティを<br>
+                            チェックしましょう
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="investigation-result gray-background">
+            <div class="section-content">
+                <div class="container">
+                    <div class="results columns3">
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="result-title">
+                                    <span>個人情報漏洩件数</span>
+                                </div>
+                                <div class="result-image">
+                                    <img class="first" src="./assets/img/result01.png" alt="" />
+                                </div>
+                                <div class="result-message">
+                                    <span class="count">99,999</span>
+                                    <span class="unit">件以上</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="result-title">
+                                    <span>予想被害総額</span>
+                                </div>
+                                <div class="result-image">
+                                    <img class="second" src="./assets/img/result02.png" alt="" />
+                                </div>
+                                <div class="result-message">
+                                    <span class="count">99,999</span>
+                                    <span class="unit">億円以上</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="result-title">
+                                    <span>WordPress<br>脆弱性公表件数</span>
+                                </div>
+                                <div class="result-image">
+                                    <img class="third" src="./assets/img/result03.png" alt="" />
+                                </div>
+                                <div class="result-message">
+                                    <span class="count">99,999</span>
+                                    <span class="unit">件以上</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reference">
+                        <span>※直近１年間の合計、2020年MM月DD日時点、株式会社サンエイ調べ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="information-leak">
+            <div class="section-title">
+                <h3>Information leak<span>サイバー攻撃 被害事例</span></h3>                
+            </div>
+            <div class="section-content">
+                <div class="container">
+                    <div class="examples columns3">
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="website-logo website-logo--imagineer">
+                                    <div class="hover-mask">
+                                        <div class="mask-content">
+                                            <div class="circle">
+                                                <div class="right-arrow"></div>
+                                            </div>
+                                            <div class="text">
+                                                <span>詳しく見る</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button-panel">
+                                    <div class="button button--invalid-access">
+                                        <span>不正アクセス</span>
+                                    </div>
+                                    <div class="button button--link-to">
+                                        <span>会員サイト</span>
+                                    </div>
+                                </div>
+                                <div class="datetime">
+                                    <span>2020.8.31 (水)</span>
+                                </div>
+                                <div class="explanation">
+                                    <a href="#">「いつでもリラックマ」管理サーバへ不正アクセス、メールアドレス105,180件流出</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="website-logo website-logo--famm">
+                                    <div class="hover-mask">
+                                        <div class="mask-content">
+                                            <div class="circle">
+                                                <div class="right-arrow"></div>
+                                            </div>
+                                            <div class="text">
+                                                <span>詳しく見る</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button-panel">
+                                    <div class="button button--invalid-access">
+                                        <span>不正アクセス</span>
+                                    </div>
+                                    <div class="button button--link-to">
+                                        <span>会員サイト</span>
+                                    </div>
+                                </div>
+                                <div class="datetime">
+                                    <span>2020.8.31 (水)</span>
+                                </div>
+                                <div class="explanation">
+                                    <a href="#">家族アルバム「Famm」運営サーバから個人情報引き出しが判明</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="website-logo website-logo--memphis-store">
+                                    <div class="hover-mask">
+                                        <div class="mask-content">
+                                            <div class="circle">
+                                                <div class="right-arrow"></div>
+                                            </div>
+                                            <div class="text">
+                                                <span>詳しく見る</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button-panel">
+                                    <div class="button button--invalid-access">
+                                        <span>不正アクセス</span>
+                                    </div>
+                                    <div class="button button--link-to">
+                                        <span>会員サイト</span>
+                                    </div>
+                                </div>
+                                <div class="datetime">
+                                    <span>2020.8.31 (水)</span>
+                                </div>
+                                <div class="explanation">
+                                    <a href="#">熊本のファッションセレクトショップに不正アクセス、1年分の決済情報が流出</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">すべて見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="vulnerability gray-background">
+            <div class="section-title">
+                <h3>Vulnerability<span>WordPress脆弱性 危険度ランキング</span></h3>
+            </div>
+            <div class="section-content">
+                <div class="link">
+                    <span>></span>
+                    <a href="#">Wordpress（ワードプレス）とは？</a>
+                </div>
+                <div class="explanation">
+                    <span>35％以上のWebサイトに導入されているシステムです。</span>
+                </div>
+                <div class="container">
+                    <div class="vulnerabilities columns2">
+                        <div class="column">
+                            <div class="white-background">
+                                <div class="subtitle">
+                                    <div class="text">
+                                        <span>WordPress本体</span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="risk-level risk-level--4">
+                                            <div class="risk-level__title">
+                                                <p class="label">危険度</p>
+                                                <p class="value">8.1</p>
+                                            </div>
+                                        </div>
+                                        <div class="details">
+                                            <div class="datetime">2020.8.31 (水)</div>
+                                            <div class="badges">
+                                                <span class="badge badge--low-version">対象：5.4.1 未満</span>
+                                                <span class="badge badge--need-version-up">要バージョンアップ</span>
+                                            </div>
+                                            <div class="explain">
+                                                <a href="#">
+                                                    メール送信されたパスワードリセット用リンクがパスワード変更後も期限切れにならない脆弱性
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="risk-level risk-level--3">
+                                            <div class="risk-level__title">
+                                                <p class="label">危険度</p>
+                                                <p class="value">7.5</p>
+                                            </div>
+                                        </div>
+                                        <div class="details">
+                                            <div class="datetime">2020.8.31 (水)</div>
+                                            <div class="badges">
+                                                <span class="badge badge--low-version">対象：5.4.1 未満</span>
+                                                <span class="badge badge--need-version-up">要バージョンアップ</span>
+                                            </div>
+                                            <div class="explain">
+                                                <a href="#">
+                                                    以前公開されていた非公開の投稿を開示される脆弱性
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="risk-level risk-level--2">
+                                            <div class="risk-level__title">
+                                                <p class="label">危険度</p>
+                                                <p class="value">6.8</p>
+                                            </div>
+                                        </div>
+                                        <div class="details">
+                                            <div class="datetime">2020.8.31 (水)</div>
+                                            <div class="badges">
+                                                <span class="badge badge--low-version">対象：5.4.1 未満</span>
+                                                <span class="badge badge--need-version-up">要バージョンアップ</span>
+                                            </div>
+                                            <div class="explain">
+                                                <a href="#">
+                                                    改ざん等の被害に繋がるクロスサイトスクリプティングの脆弱性
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="risk-level risk-level--1">
+                                            <div class="risk-level__title">
+                                                <p class="label">危険度</p>
+                                                <p class="value">5.0</p>
+                                            </div>
+                                        </div>
+                                        <div class="details">
+                                            <div class="datetime">2020.8.31 (水)</div>
+                                            <div class="badges">
+                                                <span class="badge badge--low-version">対象：5.4.1 未満</span>
+                                                <span class="badge badge--need-version-up">要バージョンアップ</span>
+                                            </div>
+                                            <div class="explain">
+                                                <a href="#">
+                                                    改ざん等の被害に繋がるクロスサイトスクリプティングの脆弱性
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="white-background">
+                                <div class="subtitle">
+                                    <div class="text">
+                                        <span>WordPressプラグイン</span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="risk-level risk-level--4">
+                                            <div class="risk-level__title">
+                                                <p class="label">危険度</p>
+                                                <p class="value">8.1</p>
+                                            </div>
+                                        </div>
+                                        <div class="details">
+                                            <div class="datetime">2020.8.31 (水)</div>
+                                            <div class="badges">
+                                                <span class="badge badge--low-version">対象：5.4.1 未満</span>
+                                                <span class="badge badge--need-version-up">要バージョンアップ</span>
+                                            </div>
+                                            <div class="explain">
+                                                <a href="#">
+                                                    メール送信されたパスワードリセット用リンクがパスワード変更後も期限切れにならない脆弱性
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="risk-level risk-level--3">
+                                            <div class="risk-level__title">
+                                                <p class="label">危険度</p>
+                                                <p class="value">7.5</p>
+                                            </div>
+                                        </div>
+                                        <div class="details">
+                                            <div class="datetime">2020.8.31 (水)</div>
+                                            <div class="badges">
+                                                <span class="badge badge--low-version">対象：5.4.1 未満</span>
+                                                <span class="badge badge--need-version-up">要バージョンアップ</span>
+                                            </div>
+                                            <div class="explain">
+                                                <a href="#">
+                                                    以前公開されていた非公開の投稿を開示される脆弱性
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="risk-level risk-level--2">
+                                            <div class="risk-level__title">
+                                                <p class="label">危険度</p>
+                                                <p class="value">6.8</p>
+                                            </div>
+                                        </div>
+                                        <div class="details">
+                                            <div class="datetime">2020.8.31 (水)</div>
+                                            <div class="badges">
+                                                <span class="badge badge--low-version">対象：5.4.1 未満</span>
+                                                <span class="badge badge--need-version-up">要バージョンアップ</span>
+                                            </div>
+                                            <div class="explain">
+                                                <a href="#">
+                                                    改ざん等の被害に繋がるクロスサイトスクリプティングの脆弱性
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="risk-level risk-level--1">
+                                            <div class="risk-level__title">
+                                                <p class="label">危険度</p>
+                                                <p class="value">5.0</p>
+                                            </div>
+                                        </div>
+                                        <div class="details">
+                                            <div class="datetime">2020.8.31 (水)</div>
+                                            <div class="badges">
+                                                <span class="badge badge--low-version">対象：5.4.1 未満</span>
+                                                <span class="badge badge--need-version-up">要バージョンアップ</span>
+                                            </div>
+                                            <div class="explain">
+                                                <a href="#">
+                                                    改ざん等の被害に繋がるクロスサイトスクリプティングの脆弱性
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">すべて見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="diagnose-form">
+            <div class="section-container white-background">
+                <div class="section-title">
+                    <h3>Check WordPress<span>自社サイトの WordPressの有無を確認</span></h3>
+                </div>
+                <div class="form">
+                    <form>
+                        <div class="input-url">
+                            <input type="text" placeholder="https://www.example.com">
+                        </div>
+                        <div class="input-check">
+                            <input type="checkbox" name="agreement" id="agreement">
+                            <label for="agreement">入力したアドレスを診断することに同意します。</label>
+                        </div>
+                        <div class="input-submit">
+                            <div class="btn-container">
+                                <a href="#" class="submit btn">診断開始</a>
+                            </div>
+                            <div class="btn-container">
+                                <a href="#" class="btn">専用の診断ツールによる診断をご希望の方</a>
+                                <a href="#" class="btn">セキュリティ・エンジニアによる診断をご希望の方</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="staff-blog">
+            <div class="section-title">
+                <h3>Blog<span>スタッフブログ</span></h3>
+            </div>
+            <div class="section-content">
+                <div class="container">
+                    <div class="blogs">
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="datetime">
+                                    <span>2020.8.31 (水）</span>
+                                </div>
+                                <div class="blog-title">
+                                    <a href="#">〇〇〇〇グループの事業戦略を発表</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="datetime">
+                                    <span>2020.8.31 (水）</span>
+                                </div>
+                                <div class="blog-title">
+                                    <a href="#">『日経xTECH』にて〇〇〇〇が紹介されました</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="datetime">
+                                    <span>2020.8.31 (水）</span>
+                                </div>
+                                <div class="blog-title">
+                                    <a href="#">〇〇〇〇グループの事業戦略を発表</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="datetime">
+                                    <span>2020.8.31 (水）</span>
+                                </div>
+                                <div class="blog-title">
+                                    <a href="#">『日経産業新聞』に、経営統合について紹介されました</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="datetime">
+                                    <span>2020.8.31 (水）</span>
+                                </div>
+                                <div class="blog-title">
+                                    <a href="#">〇〇〇〇グループの事業戦略を発表</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <a href="#" class="btn">すべて見る</a>
+                </div>
+            </div>
+        </section>
+        <section class="simple-diagnose">
+            <div class="container">
+                <a href="#">
+                    <!-- <img src="./assets/img/simple-diagnose.png" alt="" /> -->
+                </a>
+                <div class="content">
+                    <h2>Webサイト脆弱性 簡易診断</h2>
+                    <p>
+                        定期的な脆弱性診断＆マルウェア自動検知・<br>駆除機能の導入を支援、安全・安心なWebサイトへ
+                    </p>
+                    <div class="commission">
+                        <div class="label">
+                            <span>診断ツール利用料</span>
+                        </div>
+                        <div class="price">
+                            <span class="value">12,000</span>
+                            <span class="unit">円～／年間</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="link-detail">
+                    <span>詳細は<br>こちら</span>
+                </div>
+            </div>
+        </section>
+        <section class="advertisement">
+            <div class="container">
+                <a href="#">
+                    <img src="./assets/img/caspersky.png" alt="" />
+                </a>
+            </div>
+
+            <div class="container">
+                <a href="#">
+                    <img src="./assets/img/caspersky.png" alt="" />
+                </a>
+            </div>
+        </section>
+    </div>
+    <div class="page-top-btn"></div>
+    <footer class="page-footer">
+        <div class="footer-top">
+            <div class="footer-middle">
+                <div class="container">
+                    <a href="#" class="logo">
+                        <img src="./assets/img/compass1.svg" alt="" />
+                        <span class="logo-text">
+                            <span class="logo-text__en">Security Press</span>
+                            <span class="logo-text__jp">- セキュリティ プレス -</span>
+                        </span>
+                    </a>
+                    <ul class="footer-links">
+                        <li><a href="#">ホーム</a></li>
+                        <li><a href="#">サイバー攻撃 被害事例</a></li>
+                        <li><a href="#">WordPressの脆弱性</a></li>
+                        <li><a href="#">スタッフブログ</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">運営企業</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">© Security Press. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./libs/slick/slick.min.js"></script>
+    <script src="./assets/js/theme.js"></script>
+</body>
+</html>
