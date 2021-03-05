@@ -151,8 +151,12 @@
 	}
 
 	.nav-open {
-	    min-width: 74px;
-	    height: 74px;
+	    min-width: 62px;
+		height: 74px;
+		@media(max-width: 640px) {
+			min-width: 52px;
+			height: 64px;
+		}
 	    background-color: #4B5866;
 	    color: #fff;
 	    @include flex-center;
@@ -161,14 +165,14 @@
 	    	position: relative;
 	    	display: block;
 	    	height: 5px;
-	    	width: 46px;
+	    	width: 36px;
 	    	border-top: 5px solid;
 
 	    	&:before, &:after {
 	    		content: '';
 	    		display: block;
 	    		position: absolute;
-	    		width: 46px;
+	    		width: 36px;
 	    		height: 5px;
 	    		border-top: 5px solid;
 	    		left: 0;

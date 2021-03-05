@@ -27,7 +27,7 @@
 
 .btn {
 	display: inline-block;
-	width: 300px;
+	width: 400px;
 	max-width: 100%;
 	line-height: 55px;
 	background-color: #052265;
@@ -81,6 +81,9 @@ section {
 
 .top-menu {
 	padding-top: 80px;
+	@media(max-width: 640px) {
+		padding-top: 70px;
+	}
 
 	a:hover {
 		text-decoration: underline !important;
@@ -89,15 +92,20 @@ section {
 }
 
 @media (max-width: 1280px) {
-	section:not(.hero):not(.our-business) {
-	    padding-left: 30px;
-	    padding-right: 30px;
+	section:not(.hero):not(.countermeasure) {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+	section.countermeasure {
+		padding-left: 5px;
+	    padding-right: 5px;
 	}
 }
 
 .section-title {
 	text-align: center;
 	margin-bottom: 60px;
+	overflow-wrap: break-word;
 
 	h3 {
 		font-size: 14px;
@@ -179,6 +187,9 @@ section.investigation-result {
 
 	.results {
 		margin: 0 -15px;
+		@media(max-width: 500px) {
+			margin: 0 5px;
+		}
 		display: flex;
 		margin-bottom: 20px;
 		flex-wrap: wrap;
@@ -303,7 +314,7 @@ section.investigation-result {
 		}
 
 		&.columns3 {
-			@media(min-width: 640px) {
+			@media(min-width: 641px) {
 				.item {
 					flex: 0 0 33.33%;
 					max-width: 33.33%;
@@ -329,6 +340,9 @@ section.information-leak {
 
 	.examples {
 		margin: 0 -15px;
+		@media(max-width: 500px) {
+			margin: 0 5px;
+		}
 		display: flex;
 		margin-bottom: 20px;
 		flex-wrap: wrap;
@@ -429,12 +443,14 @@ section.information-leak {
 				.button-panel {
 					padding-top: 24px;
 					display: flex;
+					flex-wrap: wrap;
 
 					.button {
 						width: 130px;
 						height: 25px;
 						text-align: center;
 						@include flex-center;
+						margin: 2px;
 
 						span {
 							color: $color-white;
@@ -447,10 +463,6 @@ section.information-leak {
 						
 						&.button--link-to {
 							background: #E04242;
-						}
-
-						+.button {
-							margin-left: 8px;
 						}
 					}
 				}
@@ -476,7 +488,7 @@ section.information-leak {
 		}
 
 		&.columns3 {
-			@media(min-width: 640px) {
+			@media(min-width: 641px) {
 				.item {
 					flex: 0 0 33.33%;
 					max-width: 33.33%;
@@ -553,6 +565,10 @@ section.vulnerability {
 
 			.subtitle {
 				padding: 40px 60px;
+				@media(max-width: 500px) {
+					padding-left: 20px;
+					padding-right: 20px;
+				}
 
 				.text {
 					text-align: center;
@@ -639,6 +655,8 @@ section.vulnerability {
 						}
 
 						.badges {
+							display: flex;
+							flex-wrap: wrap;
 							margin-top: 11px;
 
 							.badge {
@@ -646,6 +664,7 @@ section.vulnerability {
 								font: 12px "Noto Sans JP Medium";
 								padding: 3px 20px;
 								word-break: keep-all;
+								margin: 4px;
 
 								&.badge--low-version {
 									background: $color-badge-1;
@@ -688,7 +707,7 @@ section.vulnerability {
 		}
 
 		&.columns2 {
-			@media(min-width: 1000px) {
+			@media(min-width: 1025px) {
 				.column {
 					flex: 0 0 50%;
 					max-width: 50%;
@@ -726,7 +745,7 @@ section.diagnose-form {
 			padding-left: 0;
 			padding-right: 0;
 		}
-		@media(min-width: 1024px) {
+		@media(min-width: 1025px) {
 			border: 5px solid $color-border-1;
 			box-shadow: 0 3px 6px rgba(101, 101, 101, 0.16);
 			position: absolute;
@@ -778,6 +797,7 @@ section.diagnose-form {
 					text-align: center;
 					padding-top: 15px;
 					padding-bottom: 15px;
+
 					@media(max-width: 832px) {
 						flex-direction: column;
 						align-items: center;
@@ -788,6 +808,13 @@ section.diagnose-form {
 						font-size: 13px;
 						color: $color-white;
 						background: $color-background3;
+						min-width: 370px;
+						@media(max-width: 400px) {
+							min-width: 100%;
+							&:after {
+								display: none;
+							}
+						}
 						
 						&:hover {
 							background: $color-red;
@@ -1017,6 +1044,7 @@ section.simple-diagnose {
 section.advertisement {
     position: relative;
 	padding-top: 20px;
+	padding-bottom: 100px;
 	
 	.container {
 		max-width: 800px;
@@ -1053,6 +1081,9 @@ section.advertisement {
 section.breadcrumb {
 	padding-top: 36px;
 	padding-bottom: 36px;
+	@media(max-width: 1024px) {
+		display: none;
+	}
 
 	.section-content {
 		ul {
@@ -1122,10 +1153,11 @@ section.overview-title {
 
 		.btn-container {
 			text-align: center;
-
-			+.btn-container {
-				padding-top: 10px;
-			}
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			max-width: 700px;
+			margin: 0 auto;
 
 			.btn {
 				font: 12px "Noto Sans JP Medium";
@@ -1134,6 +1166,7 @@ section.overview-title {
 				background: $color-background3;
 				height: 25px;
 				width: 145px;
+				margin: 4px;
 
 				&:after {
 					display: none;
@@ -1202,13 +1235,18 @@ section.overview-detail {
 						color: $color-gray;
 						margin-right: 30px;
 						width: 90px;
+						min-width: 90px;
 						display: flex;
 						align-items: center;
 					}
 
 					.field-value {
+						@media(max-width: 800px) {
+							margin-top: 10px;
+						}	
 						font: 16px "Noto Sans JP Medium";
 						color: $color-black;
+						white-space: normal;
 
 						span {
 							display: block;
@@ -1246,6 +1284,10 @@ section.countermeasure {
 
 		.item {
 			padding: 45px 75px 70px;
+			@media (max-width: 768px) {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
 
 			+.item {
 				margin-top: 60px;
@@ -1293,7 +1335,7 @@ section.countermeasure {
 						font-size: 16px;
 						color: $color-white;
 						background: $color-background3;
-						width: 450px;
+						// width: 450px;
 
 						&:hover {
 							background: $color-red;
@@ -1326,6 +1368,405 @@ section.countermeasure {
 						flex-direction: row-reverse;
 					}
 				}
+			}
+		}
+	}
+}
+
+section.vulnerability-title {
+	padding-top: 40px;
+	padding-bottom: 50px;
+
+	.title {
+		font: 23px "Noto Sans JP Bold";
+		padding-bottom: 70px;
+		text-align: center;
+	}
+
+	.vulnerability-level {
+		.rectangle {
+			width: 250px;
+			height: 130px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			background: $color-red;
+
+			.label {
+				font: 16px "Noto Sans JP Bold";
+				color: $color-white;
+			}
+
+			.value {
+				font: 32px "Noto Sans JP Bold";
+				color: $color-white;
+			}
+		}
+
+		.version {
+			width: 250px;
+			height: 30px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font: 16px "Noto Sans JP Bold";
+			background: $color-white;
+			border: 1px solid $color-gray-5;
+			margin-top: 15px;
+		}
+
+		.about {
+			text-align: center;
+			.name {
+				font: 13px "Noto Sans JP Bold";
+				display: block;
+				margin-top: 5px;
+			}
+
+			.datetime {
+				font: 13px "Noto Sans JP Regular";
+				color: $color-gray;
+				display: block;
+				margin-top: 17px;
+			}
+		}
+	}
+
+	.badge-area {
+		padding-top: 25px;
+
+		.badges {
+			text-align: center;
+			max-width: 700px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+
+			.badge {
+				color: $color-white;
+				font: 12px "Noto Sans JP Medium";
+				padding: 3px 20px;
+				word-break: keep-all;
+				margin: 4px;
+
+				&.badge--low-version {
+					background: $color-badge-1;
+				}
+
+				&.badge--need-version-up {
+					background: $color-badge-2;
+				}
+			}
+
+			+.badge {
+				padding-left: 8px;
+			}
+		}
+	}
+}
+
+section.vulnerability-detail {
+	padding-top: 50px;
+	padding-bottom: 390px;
+	@media(max-width: 1024px) {
+		padding-bottom: 90px;
+	}
+
+	.damage-detail {
+		padding-bottom: 80px;
+
+		.title {
+			font: 15px "Noto Sans JP Regular";
+			width: 100%;
+			max-width: 850px;
+			padding-bottom: 45px;
+			margin: 0 auto;
+		}
+	}
+
+	.field-container {
+		display: flex;
+		justify-content: center;
+
+		.fields {
+			width: 100%;
+			max-width: 850px;
+
+			.item {
+				padding-left: 20px;
+				padding-right: 20px;
+				padding-top: 25px;
+				padding-bottom: 25px;
+				border-top: 1px solid $color-gray-2;
+				display: flex;
+				align-items: center;
+
+				.item-inner {
+					display: flex;
+					@media(max-width: 800px) {
+						flex-direction: column;
+					}
+					word-break: keep-all;
+					
+					.field-name {
+						font: 14px "Noto Sans JP Regular";
+						color: $color-gray;
+						margin-right: 30px;
+						@media(min-width: 801px) {
+							width: 90px;
+							min-width: 90px;
+						}
+						display: flex;
+						align-items: center;
+					}
+
+					.field-value {
+						@media(max-width: 800px) {
+							padding-top: 15px;
+						}	
+						font: 16px "Noto Sans JP Medium";
+						color: $color-black;
+						white-space: normal;
+						word-break: break-all;
+
+						span {
+							display: block;
+						}
+
+						a {
+							text-decoration: underline !important;
+						}
+
+						&:hover {
+							a {
+								text-decoration: none !important;
+							}
+						}
+					}
+				}
+
+				&:last-child {
+					border-bottom: 1px solid $color-gray-2;
+				}
+			}
+		}
+	}
+}
+
+section.vulnerabilities {
+	padding-top: 380px;
+	@media(max-width: 1024px) {
+		padding-top: 80px;
+	}
+	padding-bottom: 80px;
+
+	.link {
+		font: 15px "Noto Sans JP Bold";
+		text-align: center;
+
+		a {
+			text-decoration: underline !important;
+
+			&:hover {
+				text-decoration: none !important;
+			}
+		}
+	}
+
+	.explanation {
+		font: 14px "Noto Sans JP Medium";
+		text-align: center;
+		padding-bottom: 60px;
+		margin-top: 14px;
+	}
+
+	.vulnerabilities {
+		margin: 0 -15px;
+		display: flex;
+		margin-bottom: 50px;
+		flex-wrap: wrap;
+		@media(max-width: 1000px) {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.column {
+			padding: 0 15px;
+			max-width: 600px;
+			@media(max-width: 1000px) {
+				+.column {
+					padding-top: 30px;
+				}
+			}
+
+			.white-background {
+				padding-bottom: 22px;
+			}
+
+			.subtitle {
+				padding: 40px 60px;
+
+				.text {
+					text-align: center;
+					border: 1px solid $color-background3;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding-top: 8px;
+					padding-bottom: 8px;
+
+					span {
+						font: 17px "Noto Sans JP Bold";
+						color: $color-background3;
+					}
+				}
+			}
+
+			.item {
+				padding-left: 60px;
+				padding-right: 60px;
+				@media(max-width: 1000px) {
+					padding-left: 30px;
+					padding-right: 30px;
+				}
+				@media(max-width: 400px) {
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+
+				.item-inner {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+
+					.risk-level {
+						min-height: 90px;
+						min-width: 90px;
+						max-height: 90px;
+						max-width: 90px;
+						border-radius: 50%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin-right: 25px;
+						@media(max-width: 400px) {
+							margin-right: 10px;
+						}
+
+						&.risk-level--1 {
+							background: $color-risk-1;
+						}
+
+						&.risk-level--2 {
+							background: $color-risk-2;
+						}
+
+						&.risk-level--3 {
+							background: $color-risk-3;
+						}
+
+						&.risk-level--4 {
+							background: $color-risk-4;
+						}
+
+						.risk-level__title {
+							text-align: center;
+
+							.label {
+								color: $color-white;
+								font: 12px "Noto Sans JP Bold";
+							}
+
+							.value {
+								color: $color-white;
+								font: 22px "Noto Sans JP Bold";
+							}
+						}
+					}
+
+					.details {
+						.datetime {
+							font: 13px "Noto Sans JP Regular";
+							color: $color-gray;
+						}
+
+						.badges {
+							display: flex;
+							flex-wrap: wrap;
+							margin-top: 11px;
+
+							.badge {
+								color: $color-white;
+								font: 12px "Noto Sans JP Medium";
+								padding: 3px 20px;
+								word-break: keep-all;
+								margin: 4px;
+
+								&.badge--low-version {
+									background: $color-badge-1;
+								}
+
+								&.badge--need-version-up {
+									background: $color-badge-2;
+								}
+							}
+
+							+.badge {
+								padding-left: 8px;
+							}
+						}
+
+						.explain {
+							margin-top: 11px;
+							text-align: left;
+							font: 16px "Noto Sans JP Medium";
+							color: $color-black;
+							
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
+
+					padding-bottom: 28px;
+				}
+
+				+.item {
+					// padding-top: 28px;
+
+					.item-inner {
+						padding-top: 28px;
+						border-top: 1px solid $color-gray-2;
+					}
+				}
+			}
+		}
+
+		&.columns2 {
+			@media(min-width: 1025px) {
+				.column {
+					flex: 0 0 50%;
+					max-width: 50%;
+				}
+			}
+		}
+	}
+
+	.btn-container {
+		text-align: center;
+
+		.btn {
+			font-family: "Noto Sans JP Medium";
+			font-size: 16px;
+			color: $color-white;
+			background: $color-background3;
+
+			&:hover {
+				background: $color-red;
 			}
 		}
 	}
@@ -1416,7 +1857,7 @@ section.countermeasure {
 	}
 }
 
-@media (max-width: 749px) {
+@media (max-width: 768px) {
 	.hero-title {
 	    font-size: 2.5vw;
 	    padding: 0 5vw;
@@ -1453,10 +1894,15 @@ section.countermeasure {
 	}
 }
 
-@media (max-width: 575px) {
+@media (max-width: 576px) {
 	.products.columns3 .item {
 	    flex: 0 0 100%;
 	    max-width: 100%;
+	}
+
+	.btn {
+	    font-size: 16px;
+	    width: 450px;
 	}
 }
 
@@ -1464,5 +1910,11 @@ section.countermeasure {
 	.technology .desc {
 	    padding-left: 0;
 	    padding-right: 0;
+	}
+
+	.btn {
+	    font-size: 12px;
+		width: 100%;
+		line-height: 40px;
 	}
 }

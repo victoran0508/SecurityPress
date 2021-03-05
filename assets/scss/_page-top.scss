@@ -8,7 +8,10 @@
     right: 0;
     top: 0;
     z-index: 9;
-    height: 80px;
+	height: 80px;
+	@media(max-width: 640px) {
+		height: 70px;
+	}
 	color: $color-black;
 	background: $color-background1;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.16);
@@ -34,7 +37,7 @@
 				padding-left: 50px;	
 			}
 			@media (max-width: 480px) {
-				padding-left: 30px;	
+				padding-left: 20px;	
 			}
 
 			img {
@@ -50,6 +53,7 @@
 				align-items: baseline;
 				margin-left: 14px;
 				font-weight: bold;
+				line-height: 23px;
 			}
 		
 			.logo-text__en, .logo-text__jp {
@@ -91,7 +95,6 @@
 		background: url(../img/footer_bg.jpg) center no-repeat;
 		background-size: cover;
 		color: #fff;
-		padding-top: 100px;
 
 		h2 {
 			font-size: 30px;
@@ -256,7 +259,7 @@
 	}
 }
 
-@media (max-width: 749px) {
+@media (max-width: 768px) {
 	.page-footer {
 		.container {
 	    	padding: 0 30px;
@@ -268,7 +271,7 @@
 	}
 }
 
-@media (max-width: 575px) {
+@media (max-width: 576px) {
 	.page-footer .footer-top .contact-info {
 	    padding: 15px;
 	    height: auto;
