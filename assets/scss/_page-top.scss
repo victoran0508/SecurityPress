@@ -209,7 +209,11 @@
 	a {
 		font: 14px "Noto Sans JP Medium";
 	    line-height: 32px;
-	    color: inherit;
+		color: inherit;
+		
+		&:hover {
+			text-decoration: underline !important;
+		}
 	}
 }
 

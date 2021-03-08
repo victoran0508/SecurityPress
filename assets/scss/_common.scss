@@ -34,6 +34,7 @@
 	color: #fff;
 	position: relative;
 	@include transition-all;
+	border-radius: 2px;
 
 	&:after {
 		content: '';
@@ -106,17 +107,18 @@ section {
 	text-align: center;
 	margin-bottom: 60px;
 	overflow-wrap: break-word;
+	word-wrap: break-word;
 
 	h3 {
 		font-size: 14px;
 		font-family: "Noto Sans JP Bold";
-		font-weight: normal;
+		font-weight: bold;
 		color: $color-red;
 
 		> span {
 			font-family: "Noto Sans JP Bold";
 			font-size: 32px;
-			font-weight: normal;
+			font-weight: bold;
 			line-height: 60px;
 		    color: $color-black;
 			display: block;
@@ -250,6 +252,7 @@ section.investigation-result {
 					span {
 						font-family: "Noto Sans JP Bold";
 						font-size: 20px;
+						font-weight: bold;
 						display: block;
 						height: 60px;
 					}
@@ -296,6 +299,7 @@ section.investigation-result {
 						color: $color-red;
 						font-family: "Noto Sans JP Black";
 						font-size: 40px;
+						font-weight: bold;
 						@media(max-width: 768px) {
 							font-size: 30px;
 						}
@@ -305,6 +309,7 @@ section.investigation-result {
 						color: $color-black;
 						font-family: "Noto Sans JP Bold";
 						font-size: 20px;
+						font-weight: bold;
 						white-space: nowrap;
 					}
 
@@ -499,6 +504,7 @@ section.information-leak {
 
 	.btn-container {
 		text-align: center;
+		padding-top: 60px;
 
 		.btn {
 			font-family: "Noto Sans JP Medium";
@@ -764,6 +770,7 @@ section.diagnose-form {
 					padding: 20px 25px;
 					border: 3px solid $color-border-2;
 					border-radius: 3px;
+					font-size: 20px;
 
 					&:focus {
 						border-color: $color-black;
@@ -974,18 +981,18 @@ section.simple-diagnose {
 					padding: 4px 20px;
 					border: 1px solid white;
 					margin-right: 15px;
-
-					span {
-						font: 12px "Noto Sans JP Medium";
-					}
+					display: block;
+					font: 12px "Noto Sans JP Medium";
 				}
 
 				.price {
 					display: flex;
 					align-items: baseline;
+					height: 27px;
 
 					.value {
 						font: 27px "Noto Sans JP Black";
+						line-height: 29px;
 					}
 
 					.unit {
@@ -1093,6 +1100,7 @@ section.breadcrumb {
 			li {
 				display: inline;
 				font: 12px "Noto Sans JP Regular";
+				color: $color-gray-6;
 
 				+li:before {
 					padding: 8px;
@@ -1117,6 +1125,7 @@ section.overview-title {
 
 	.title {
 		font: 23px "Noto Sans JP Bold";
+		font-weight: bold;
 		padding-bottom: 70px;
 		text-align: center;
 	}
@@ -1135,6 +1144,7 @@ section.overview-title {
 			text-align: center;
 			.name {
 				font: 15px "Noto Sans JP Bold";
+				font-weight: bold;
 				display: block;
 				margin-top: 21px;
 			}
@@ -1172,16 +1182,16 @@ section.overview-title {
 					display: none;
 				}
 
-				&:hover {
-					background: $color-red;
-				}
+				// &:hover {
+				// 	background: $color-red;
+				// }
 
 				&.btn--red {
 					background: $color-red;
 
-					&:hover {
-						background: $color-background3;
-					}
+					// &:hover {
+					// 	background: $color-background3;
+					// }
 				}
 			}
 		}
@@ -1232,6 +1242,7 @@ section.overview-detail {
 					
 					.field-name {
 						font: 14px "Noto Sans JP Regular";
+						font-weight: bold;
 						color: $color-gray;
 						margin-right: 30px;
 						width: 90px;
@@ -1254,6 +1265,11 @@ section.overview-detail {
 
 						a {
 							text-decoration: underline !important;
+
+							img {
+								margin-left: 15px;
+								display: inline-block;
+							}
 						}
 
 						&:hover {
@@ -1299,6 +1315,7 @@ section.countermeasure {
 					padding-bottom: 11px;
 					border-bottom: 1px solid $color-gray-2;
 					font: 22px "Noto Sans JP Bold";
+					font-weight: bold;
 					line-height: 22px;
 					display: flex;
 					align-items: center;
@@ -1317,6 +1334,7 @@ section.countermeasure {
 				.content {
 					.content1 {
 						font: 18px "Noto Sans JP Bold";
+						font-weight: bold;
 						padding-top: 20px;
 					}
 
@@ -1335,7 +1353,7 @@ section.countermeasure {
 						font-size: 16px;
 						color: $color-white;
 						background: $color-background3;
-						// width: 450px;
+						border-radius: 2px;
 
 						&:hover {
 							background: $color-red;
@@ -1350,9 +1368,10 @@ section.countermeasure {
 
 					.title {
 						font: 16px "Noto Sans JP Bold";
+						font-weight: bold;
 						color: $color-warning;
 						padding-left: 25px;
-						background: left center url(../img/warning.png) no-repeat;
+						background: left top url(../img/warning.png) no-repeat;
 					}
 
 					.content {
@@ -1514,6 +1533,7 @@ section.vulnerability-detail {
 					
 					.field-name {
 						font: 14px "Noto Sans JP Regular";
+						font-weight: bold;
 						color: $color-gray;
 						margin-right: 30px;
 						@media(min-width: 801px) {
