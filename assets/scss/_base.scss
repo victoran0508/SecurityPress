@@ -57,7 +57,32 @@ img {
 }
 
 .background-zoom:hover img {
-    transform: scale(1.05);
+    // -webkit-transform: scale(1.05);
+    // -mstransform: scale(1.05);
+    // transform: scale(1.05);
+    @include transform(scale(1.05));
+}
+
+.pc, .tb, .sp {
+    display: none;
+}
+
+@media screen and (min-width: 1025px) {
+    .pc {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .tb {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sp {
+        display: block;
+    }
 }
 
 .checkbox-label {
@@ -124,7 +149,8 @@ img {
     height: 7px;
     border: solid white;
     border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    // -webkit-transform: rotate(45deg);
+    // -ms-transform: rotate(45deg);
+    // transform: rotate(45deg);
+    @include transform(rotate(45deg));
 }

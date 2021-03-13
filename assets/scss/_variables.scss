@@ -31,14 +31,95 @@ $color-badge-2: #5878AA;
 $color-mask: #313131;
 
 @mixin flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include display-flex();
+    @include align-items-center();
+    @include justify-content-center();
 }
 
 @mixin flex-center-v {
+    @include display-flex();
+    @include align-items-center();
+}
+
+@mixin display-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    align-items: center;
+}
+
+@mixin align-items-center {
+    @include align-items(center);
+}
+
+@mixin align-items-flex-start {
+    @include align-items(flex-start);
+}
+
+@mixin align-items($v) {
+    -webkit-box-align: $v;
+    -webkit-flex-align: $v;
+    -ms-flex-align: $v;
+    -webkit-align-items: $v;
+    align-items: $v;
+}
+
+@mixin justify-content-center {
+    @include justify-content(center);
+}
+
+@mixin justify-content-space-evenly {
+    @include justify-content(space-evenly);
+}
+
+@mixin justify-content-space-around {
+    @include justify-content(space-around);
+    -webkit-box-pack: distribute;
+    -ms-flex-pack: distribute;
+}
+
+@mixin justify-content-space-between {
+    @include justify-content(space-between);
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+}
+
+@mixin justify-content-flex-start {
+    @include justify-content(flex-start);
+    -webkit-box-pack: start;
+}
+
+@mixin justify-content-flex-end {
+    @include justify-content(flex-end);
+    -webkit-box-pack: end;
+}
+
+@mixin justify-content($v) {
+    -webkit-box-pack: $v;
+	-webkit-justify-content: $v;
+    -ms-flex-pack: $v;
+	-moz-box-pack: $v;
+    justify-content: $v;
+}
+
+@mixin flex-direction-column {
+    -webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-moz-box-orient: vertical;
+	-moz-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+@mixin flex-wrap-wrap {
+    @include flex-wrap(wrap);
+}
+
+@mixin flex-wrap($v) {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 @mixin transition($attr, $sec, $ease) {
@@ -49,4 +130,19 @@ $color-mask: #313131;
 
 @mixin transition-all {
 	@include transition(all, .3s, ease);
+}
+
+@mixin transform($v) {
+    -webkit-transform: $v;
+    -ms-transform: $v;
+    transform: $v;
+}
+
+@mixin flex($v) {
+    -webkit-flex: $v;
+    -webkit-box-flex: $v;
+    -webkit-flex: $v;
+	-moz-box-flex: $v;
+    -ms-flex: $v;
+    flex: $v;
 }

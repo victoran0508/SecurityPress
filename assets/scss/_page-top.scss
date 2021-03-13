@@ -9,7 +9,7 @@
     top: 0;
     z-index: 9;
 	height: 80px;
-	@media(max-width: 640px) {
+	@media screen and (max-width: 640px) {
 		height: 70px;
 	}
 	color: $color-black;
@@ -21,29 +21,31 @@
 	
 	.header-inner {
 		@include flex-center-v;
-		justify-content: space-between;
-		@media (max-width: 768px) {
-			justify-content: center;
+		@include justify-content-space-between;
+		@media screen and (max-width: 768px) {
+			@include justify-content-center;
 		}
 		width: 1200px;
-		flex-wrap: wrap;
+		@include flex-wrap-wrap;
 
 		.logo {
 			display: flex;
-			justify-content: center;
+			@include justify-content-center;
 			align-items: center;
 			flex-direction: row;
-			@media (max-width: 1280px) {
+			color: $color-black;
+
+			@media screen and (max-width: 1280px) {
 				padding-left: 50px;	
 			}
-			@media (max-width: 480px) {
+			@media screen and (max-width: 480px) {
 				padding-left: 20px;	
 			}
 
 			img {
 				height: 32px;
 				width: 32px;
-				@media (max-width: 480px) {
+				@media screen and (max-width: 480px) {
 					height: 40px;
 					width: 40px;
 				}
@@ -73,11 +75,11 @@
 		.description {
 			font-family: "Noto Sans JP Regular";
 			font-size: 14px;
-			@media (max-width: 1280px) {
+			@media screen and (max-width: 1280px) {
 				padding-left: 60px;
 				padding-right: 50px;
 			}
-			@media (max-width: 768px) {
+			@media screen and (max-width: 768px) {
 				display: none;
 			}
 		}
@@ -86,7 +88,7 @@
 
 .page-footer {
 	.container {
-		@media (max-width: 1280px) {
+		@media screen and (max-width: 1280px) {
 	    	padding: 0 30px;
 	    }
 	}
@@ -107,7 +109,7 @@
 		    max-width: 100%;
 		    display: flex;
 		    align-items: center;
-		    justify-content: center;
+		    @include justify-content-center;
 		    height: 98px;
 		    border: 1px solid #fff;
 		    background-color: #03143c;
@@ -139,8 +141,8 @@
 		color: $color-gray-4;
 		
 		.logo {
-			display: flex;
-			justify-content: center;
+			@include display-flex;
+			@include justify-content-center;
 			align-items: center;
 			flex-direction: row;
 			color: $color-gray-4;
@@ -189,13 +191,18 @@
 
 .footer-links {
 	list-style: none;
-    display: flex;
-	justify-content: space-evenly;
+    @include display-flex;
+	@include justify-content-center;
 	padding-top: 50px;
 
 	> li {
-		max-width: 105px;
-    	white-space: nowrap;
+		white-space: nowrap;
+
+		& + li {
+			a {
+				margin-left: 50px;
+			}
+		}
 	}
 
 	ul {
@@ -217,7 +224,7 @@
 	}
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
 	.page-footer {
 	    text-align: center;
 
@@ -256,14 +263,17 @@
 			    }
 
 			    &.copyright {
-				    font-size: 20px;
+				    font-size: 16px;
+					@media screen and (max-width: 640px) {
+						font-size: 3.5vw;
+					}
 				}
 			}
 		}
 	}
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 	.page-footer {
 		.container {
 	    	padding: 0 30px;
@@ -275,7 +285,7 @@
 	}
 }
 
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
 	.page-footer .footer-top .contact-info {
 	    padding: 15px;
 	    height: auto;
